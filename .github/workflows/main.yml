@@ -1,0 +1,30 @@
+name: Github Actions demo
+on:
+  push:
+    branches: [ main ]
+    paths-ignore: [.github/**]
+  pull_request:
+    branches: main
+  schedule:
+    - cron: '15 6 * * 0'
+  workflow_dispatch:
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - id: echoname_id
+        name: echoname
+        shell: bash
+        run: |
+          echo ${{ github.event_name }}
+      - id: second-step
+        if: ${{ github. }}
+        name: second-step
+        shell: bash
+        run: |
+          echo ${{ github.repository }}
+          
+          
+        
+      
+        
